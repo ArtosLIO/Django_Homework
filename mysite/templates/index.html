@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <p>Значение:
+        {% if num|divisibleby:"2" %}
+            ЧЁТНОЕ</p>
+        {% else %}
+            НЕЧЁТНОЕ</p>
+        {% endif %}
+    </div>
+    <div>
+        {% if slug %}
+            {% include 'add.html' with slug=slug %}
+        {% endif %}
+    </div>
+    <div>
+        <a href="{% url 'base' %}">RETURN BASE PAGE</a>
+    </div>
+{% endblock %}

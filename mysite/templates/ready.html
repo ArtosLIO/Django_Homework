@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {% if accep %}
+        <h1>You accepted</h1>
+    {% else %}
+        <h1>You don`t accepted</h1>
+    {% endif %}
+    <a href="{% url 'form' %}">RETURN</a>
+
+    <a href="{% url 'logout' %}">Logout</a>
+{% endblock %}
+

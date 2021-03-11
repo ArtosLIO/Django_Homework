@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load mytags %}
+
+{% block content %}
+    <div><a href="{% url 'index' article_number|random_int %}">Link to page 'index'</a></div>
+    <div><a href="{% url 'first' article_number|random_int slug_text|random_slug %}">Link to page 'first'</a></div>
+
+    <br><hr><br>
+    <a href="{% url 'change_pass' %}">Change password</a><br>
+    <a href="{% url 'logout' %}">Logout</a>
+{% endblock %}

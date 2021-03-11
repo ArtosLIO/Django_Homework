@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <form action="{% url 'form' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <button type="submit">Send form</button>
+    </form>
+
+    <br><hr><br>
+    <a href="{% url 'change_pass' %}">Change password</a><br>
+    <a href="{% url 'logout' %}">Logout</a>
+{% endblock %}
+

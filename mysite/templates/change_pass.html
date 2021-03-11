@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="{% url 'change_pass' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <button type="submit">Change</button>
+    </form>
+{% endblock %}

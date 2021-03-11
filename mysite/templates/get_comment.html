@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="{% url 'get_comment' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <h3><button type="submit">GET COMMENTS</button></h3>
+    </form>
+    <br><hr><br>
+    {% for comment in comments %}
+        <div>
+            {{ comment.text }}
+        </div>
+    {% endfor %}
+    <br><hr><br>
+    <a href="{% url 'change_pass' %}">Change password</a><br>
+    <a href="{% url 'logout' %}">Logout</a>
+{% endblock %}
